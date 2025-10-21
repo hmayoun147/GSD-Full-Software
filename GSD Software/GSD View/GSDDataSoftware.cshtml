@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "GSD Data Software";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/CustomScripts/GSD/GSDDataSoftware.js"></script>
+<div id="overlay">
+    <div id="text">Overlay Text</div>
+</div>
+<div class="right_col pb-4" role="main">
+    <div class="x_content">
+        <div class="x_panel">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="x_title">
+                        <h2>General Sewing Data</h2>
+                        <ul class="nav navbar-right panel_toolbox" style="float:left; margin-left:30px">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:green">File</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a class="dropdown-item" onclick="NewFile()">New</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a style="color:blue"><i class="fa fa-save"></i></a>
+                            </li>
+                            <li>
+                                <a onclick="ClearPartialView()" style="color:red"><i class="fa fa-remove"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content" id="LoadPartialViews">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+</div>
+<!-- Modal -->
+
+<div class="modal fade" id="modal-newform">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content bg-default">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color:black">New</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Select Type</label>
+                            <select class="form-control" id="NewFileType">
+                                <option value="0">--Type--</option>
+                                <option value="1">Macros</option>
+                                <option value="2">Styles</option>
+                                <option value="3">Features</option>
+                                <option value="4">Operations</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary pull-left" onclick="LoadPartailView()">Create</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<div class="modal fade" id="modal-clearview">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content bg-default">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color:black">Clear</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            Are you sure you want to clear?<br />
+                            <span style="color:red">Note : Please save data before clear</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger pull-left" onclick="ClearPartialViewed()">Clear</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+

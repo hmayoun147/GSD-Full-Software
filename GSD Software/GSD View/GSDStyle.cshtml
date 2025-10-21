@@ -1,0 +1,2386 @@
+﻿<style>
+    div.scrollmenu {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+    }
+    div.scrollmenu a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight:500;
+            font-size:18px;
+            text-decoration: none;
+            border-radius:7px;
+            border:solid;
+    }
+    div.scrollmenu a:hover {
+                background-color: #777;
+    }
+    div.scrollmenu a:focus {
+            background-color: green;
+    }
+    
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_title">
+            <h2>Operations</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="scrollmenu" id="GSDTabs" role="tablist">
+                    <a class="nav-link active" id="Versions-Tab" data-toggle="tab" href="#Versions" role="tab" aria-controls="Versions" aria-selected="true">Versions</a>
+
+                    <a class="nav-link" id="Heading-Tab" data-toggle="tab" href="#Heading" role="tab" aria-controls="Heading" aria-selected="false">Heading</a>
+
+                    <a class="nav-link" id="History-Tab" data-toggle="tab" href="#History" role="tab" aria-controls="History" aria-selected="false">History</a>
+
+                    <a class="nav-link" id="GraphicsVideo-Tab" data-toggle="tab" href="#GraphicsVideo" role="tab" aria-controls="GraphicsVideo" aria-selected="false">Graphics/Video</a>
+
+                    <a class="nav-link" id="BillofLabour-Tab" data-toggle="tab" href="#BillofLabour" role="tab" aria-controls="BillofLabour" aria-selected="false">Bill of Labour</a>
+
+                    <a class="nav-link" id="FactoredTime-Tab" data-toggle="tab" href="#FactoredTime" role="tab" aria-controls="FactoredTime" aria-selected="false">Factored Time</a>
+
+                    <a class="nav-link" id="UnquantifiedTime-Tab" data-toggle="tab" href="#UnquantifiedTime" role="tab" aria-controls="UnquantifiedTime" aria-selected="false">Unquantified Time</a>
+
+                    <a class="nav-link" id="ThreadDemand-Tab" data-toggle="tab" href="#ThreadDemand" role="tab" aria-controls="ThreadDemand" aria-selected="false">Thread Demand</a>
+
+                    <a class="nav-link" id="BillofMaterial-Tab" data-toggle="tab" href="#BillofMaterial" role="tab" aria-controls="BillofMaterial" aria-selected="false">Bill of Material</a>
+
+                    <a class="nav-link" id="BoMCosting-Tab" data-toggle="tab" href="#BoMCosting" role="tab" aria-controls="BoMCosting" aria-selected="false">BoM Costing</a>
+
+                    <a class="nav-link" id="CostCentres-Tab" data-toggle="tab" href="#CostCentres" role="tab" aria-controls="CostCentres" aria-selected="false">Cost Centres</a>
+
+                    <a class="nav-link" id="Costing-Tab" data-toggle="tab" href="#Costing" role="tab" aria-controls="Costing" aria-selected="false">Costing</a>
+
+                    <a class="nav-link" id="SellingPrice-Tab" data-toggle="tab" href="#SellingPrice" role="tab" aria-controls="SellingPrice" aria-selected="false">Selling Price</a>
+
+                    <a class="nav-link" id="AdditionalCosting-Tab" data-toggle="tab" href="#AdditionalCosting" role="tab" aria-controls="AdditionalCosting" aria-selected="false">Additional Costing</a>
+
+                    <a class="nav-link" id="Margins-Tab" data-toggle="tab" href="#Margins" role="tab" aria-controls="Margins" aria-selected="false">Margins</a>
+
+                    <a class="nav-link" id="KPIMatrix-Tab" data-toggle="tab" href="#KPIMatrix" role="tab" aria-controls="KPIMatrix" aria-selected="false">KPI Matrix</a>
+
+                    <a class="nav-link" id="Production-Tab" data-toggle="tab" href="#Production" role="tab" aria-controls="Production" aria-selected="false">Production</a>
+
+                    <a class="nav-link" id="LineBalance-Tab" data-toggle="tab" href="#LineBalance" role="tab" aria-controls="LineBalance" aria-selected="false">Line Balance</a>
+
+                    <a class="nav-link" id="Capacity-Tab" data-toggle="tab" href="#Capacity" role="tab" aria-controls="Capacity" aria-selected="false">Capacity</a>
+                    <a class="nav-link" id="SectionResults-Tab" data-toggle="tab" href="#SectionResults" role="tab" aria-controls="SectionResults" aria-selected="false">Section Results</a>
+                
+                </div>
+
+            </div>
+        </div>
+        <div class="tab-content" id="GSDContent">
+            <div class="tab-pane fade show active" id="Version" role="tabpanel" aria-labelledby="Version-Tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-3">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group ">
+                                                            <div class="row ">
+                                                                <div class="col col-sm-11 col-md-11">
+                                                                    <select class="form-control" name="" id="">
+                                                                        <option value="0">--Select Any--</option>
+                                                                        <option value="1">Versions</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col col-sm-1 col-md-1  align-self-end">
+                                                                    <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Version</th>
+                                                    <th>Description </th>
+                                                    <th>Analyst</th>
+                                                    <th>Date</th>
+                                                    <th>S.M.V</th>
+                                                    <th>Labour Cost</th>
+                                                    <th>% Var</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Heading" role="tabpanel" aria-labelledby="Heading-Tab">
+                <div class="col-md-8">
+                    <div class="x_panel">
+                        <div class="x_title" style="border-bottom:0px">
+                            <h2>Style</h2>
+                        </div>
+                        <div class="x_content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <div class="form-group ">
+                                                    <div class="row ">
+                                                        <div class="col col-sm-11 col-md-11">
+                                                            <select class="form-control" name="" id="">
+                                                                <option value="0">--Select Any--</option>
+                                                                <option value="1">Heading</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-sm-1 col-md-1  align-self-end">
+                                                            <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Code</td>
+                                            <td>
+                                                <input type="number" name="" id="" class="form-control" readonly />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Title</td>
+                                            <td>
+                                                <input type="text" name="" id="" class="form-control" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Description</td>
+                                            <td>
+                                                <textarea rows="1" style="width:100%" name="" id="" class="form-control"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Comments</td>
+                                            <td>
+                                                <textarea rows="1" style="width:100%" name="" id="" class="form-control"></textarea>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="x_panel">
+                        <div class="x_title" style="border-bottom:0px">
+                            <h2>Sourcing</h2>
+                        </div>
+                        <div class="x_content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <tr>
+                                            <td>Factory</td>
+                                            <td>
+                                                <div class="form-group ">
+                                                    <div class="row ">
+                                                        <div class="col col-sm-11 col-md-11">
+                                                            <select class="form-control" name="" id="">
+                                                                <option value="0">--Select Any--</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-sm-1 col-md-1  align-self-end">
+                                                            <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sourced From</td>
+                                            <td>
+                                                <div class="form-group ">
+                                                    <div class="row ">
+                                                        <div class="col col-sm-11 col-md-11">
+                                                            <select class="form-control" name="" id="">
+                                                                <option value="0">--Select Any--</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-sm-1 col-md-1  align-self-end">
+                                                            <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Country</td>
+                                            <td>
+                                                <input type="text" name="" id="" class="form-control" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Efficiency</td>
+                                            <td>
+                                                <input type="number" name="" id="" class="form-control" />
+                                            </td>
+                                            <td>Direct Cost/Min</td>
+                                            <td>
+                                                <input type="number" name="" id="" class="form-control" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-4">
+                    <div class="x_panel">
+                        <div class="x_title" style="border-bottom:0px">
+                            <h2>Product</h2>
+                        </div>
+                        <div class="x_content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <tr>
+                                            <td>ISO</td>
+                                            <td>
+                                                <div class="form-group ">
+                                                    <div class="row ">
+                                                        <div class="col col-sm-11 col-md-11">
+                                                            <select class="form-control" name="" id="">
+                                                                <option value="0">--Select Any--</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-sm-1 col-md-1  align-self-end">
+                                                            <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Reference</td>
+                                            <td>
+                                                <div class="form-group ">
+                                                    <div class="row ">
+                                                        <div class="col col-sm-11 col-md-11">
+                                                            <select class="form-control" name="" id="">
+                                                                <option value="0">--Select Any--</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-sm-1 col-md-1  align-self-end">
+                                                            <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Brand</td>
+                                            <td>
+                                                <div class="form-group ">
+                                                    <div class="row ">
+                                                        <div class="col col-sm-11 col-md-11">
+                                                            <select class="form-control" name="" id="">
+                                                                <option value="0">--Select Any--</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-sm-1 col-md-1  align-self-end">
+                                                            <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Season</td>
+                                            <td>
+                                                <div class="form-group ">
+                                                    <div class="row ">
+                                                        <div class="col col-sm-11 col-md-11">
+                                                            <select class="form-control" name="" id="">
+                                                                <option value="0">--Select Any--</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-sm-1 col-md-1  align-self-end">
+                                                            <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quantity</td>
+                                            <td>
+                                                <input type="number" name="" id="" class="form-control" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Garment Type</td>
+                                            <td>
+                                                <div class="form-group ">
+                                                    <div class="row ">
+                                                        <div class="col col-sm-11 col-md-11">
+                                                            <select class="form-control" name="" id="">
+                                                                <option value="0">--Select Any--</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-sm-1 col-md-1  align-self-end">
+                                                            <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="x_panel">
+                        <div class="x_title" style="border-bottom:0px">
+                            <h2>Factors</h2>
+                        </div>
+                        <div class="x_content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <tr>
+                                            <td>Material</td>
+                                            <td>
+                                                <input type="text" name="" id="" class="form-control" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Size</td>
+                                            <td>
+                                                <textarea rows="1" name="" id="" class="form-control" style="width:100%;"></textarea>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="History" role="tabpanel" aria-labelledby="History-Tab">
+                <div class="x_panel">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <div class="form-group ">
+                                                <div class="row ">
+                                                    <div class="col col-sm-11 col-md-11">
+                                                        <select class="form-control" name="" id="">
+                                                            <option value="0">--Select Any--</option>
+                                                            <option value="1">History</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col col-sm-1 col-md-1  align-self-end">
+                                                        <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Analyst</th>
+                                        <th>Revision Description</th>
+                                        <th>SMV</th>
+                                        <th>Cost</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="GraphicsVideo" role="tabpanel" aria-labelledby="GraphicsVideo-Tab">
+                1111111111
+            </div>
+            <div class="tab-pane fade" id="BillofLabour" role="tabpanel" aria-labelledby="BillofLabour-Tab">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table">
+                                    <tr>
+                                        <td>S.M.V</td>
+                                        <td>
+                                            <input type="number" name="" id="" class="form-control" />
+                                        </td>
+                                        <td>
+                                            <div class="form-group ">
+                                                <div class="row ">
+                                                    <div class="col col-sm-11 col-md-11">
+                                                        <select class="form-control" name="" id="">
+                                                            <option value="0">--Select Any--</option>
+                                                            <option value="1">Bill of Labour</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col col-sm-1 col-md-1  align-self-end">
+                                                        <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Code</th>
+                                            <th>Description</th>
+                                            <th>Freq.</th>
+                                            <th>SMV</th>
+                                            <th>Eff%</th>
+                                            <th>Allowed</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>001</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="FactoredTime" role="tabpanel" aria-labelledby="FactoredTime-Tab">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table">
+                                    <tr>
+                                        <td>S.M.V</td>
+                                        <td>
+                                            <input type="number" name="" id="" class="form-control" />
+                                        </td>
+                                        <td>
+                                            <div class="form-group ">
+                                                <div class="row ">
+                                                    <div class="col col-sm-11 col-md-11">
+                                                        <select class="form-control" name="" id="">
+                                                            <option value="0">--Select Any--</option>
+                                                            <option value="1">Factored Time</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col col-sm-1 col-md-1  align-self-end">
+                                                        <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Description</th>
+                                            <th>Material</th>
+                                            <th>SMV</th>
+                                            <th>Material # 2</th>
+                                            <th>Estimated Time</th>
+                                            <th>Eff%</th>
+                                            <th>Allowed</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>001</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="UnquantifiedTime" role="tabpanel" aria-labelledby="UnquantifiedTime-Tab">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table">
+                                    <tr>
+                                        <td>S.M.V</td>
+                                        <td>
+                                            <input type="number" name="" id="" class="form-control" />
+                                        </td>
+                                        <td>
+                                            <div class="form-group ">
+                                                <div class="row ">
+                                                    <div class="col col-sm-11 col-md-11">
+                                                        <select class="form-control" name="" id="">
+                                                            <option value="0">--Select Any--</option>
+                                                            <option value="1">Unquantified Time</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col col-sm-1 col-md-1  align-self-end">
+                                                        <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Description</th>
+                                            <th>Estimated Standard Time</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>001</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="ThreadDemand" role="tabpanel" aria-labelledby="ThreadDemand-Tab">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-3">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <div class="form-group ">
+                                                    <div class="row ">
+                                                        <div class="col col-sm-11 col-md-11">
+                                                            <select class="form-control" name="" id="">
+                                                                <option value="0">--Select Any--</option>
+                                                                <option value="1">Thread Demand</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-sm-1 col-md-1  align-self-end">
+                                                            <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Description</th>
+                                            <th>Stitch</th>
+                                            <th>Needle</th>
+                                            <th>Metres</th>
+                                            <th>Bobbin/Looper</th>
+                                            <th>Metres</th>
+                                            <th>Cover</th>
+                                            <th>Metres</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>001</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="BillofMaterial" role="tabpanel" aria-labelledby="BillofMaterial-Tab">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-3">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <div class="form-group ">
+                                                    <div class="row ">
+                                                        <div class="col col-sm-11 col-md-11">
+                                                            <select class="form-control" name="" id="">
+                                                                <option value="0">--Select Any--</option>
+                                                                <option value="1">Bill of Material</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-sm-1 col-md-1  align-self-end">
+                                                            <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Code</th>
+                                            <th>Type</th>
+                                            <th>Material Description</th>
+                                            <th>Qty/Unit</th>
+                                            <th>Qty/Order</th>
+                                            <th>Unit/Qty.</th>
+                                            <th>Units</th>
+                                            <th>Unit Cost</th>
+                                            <th>Cost/Unit</th>
+                                            <th>Cost/Order</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>001</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="BoMCosting" role="tabpanel" aria-labelledby="BoMCosting-Tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>Material Cost</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Fusable</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Lining</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Fabric</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Thread</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>Additional Costs</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group ">
+                                                            <div class="row ">
+                                                                <div class="col col-sm-11 col-md-11">
+                                                                    <select class="form-control" name="" id="">
+                                                                        <option value="0">--Select Any--</option>
+                                                                        <option value="1">BoM Costing</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col col-sm-1 col-md-1  align-self-end">
+                                                                    <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Trimmings</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Accessories</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Packaging</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Embroidery</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title" style="border-bottom:0px">
+                                <h2>Total BoM</h2>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table class="table">
+                                            <tr>
+                                                <td>BoM Cost</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>Currency</td>
+                                                <td>
+                                                    <div class="form-group ">
+                                                        <div class="row ">
+                                                            <div class="col col-sm-11 col-md-11">
+                                                                <select class="form-control" name="" id="">
+                                                                    <option value="0">--Select any--</option>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col col-sm-1 col-md-1  align-self-end">
+                                                                <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>Exchange Rate</td>
+                                                <td>
+                                                    <input type="text" name="" id="" class="form-control" />
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <input type="text" name="" id="" class="form-control" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="CostCentres" role="tabpanel" aria-labelledby="CostCentres-Tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <div class="form-group ">
+                                            <div class="row ">
+                                                <div class="col col-sm-11 col-md-11">
+                                                    <select class="form-control" name="" id="">
+                                                        <option value="0">--Select Any--</option>
+                                                        <option value="1">Cost Centres</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col col-sm-1 col-md-1  align-self-end">
+                                                    <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title" style="border-bottom:0px">
+                                <h2>Cost Centres</h2>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table class="table">
+                                            <tr class="text-center">
+                                                <td></td>
+                                                <td>S.M.V</td>
+                                                <td> @@%</td>
+                                                <td>BoL</td>
+                                                <td>@@%</td>
+                                                <td>Factory</td>
+                                                <td>@@% </td>
+                                                <td>Costing</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cutting</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Machining</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Examination</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pressing</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Packing</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Outwork</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table class="table">
+                                            <tr>
+                                                <td>Unallocated</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Adjustment</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Unquantified</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Costing" role="tabpanel" aria-labelledby="Costing-Tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>Direct Cost</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Basic S.M.V</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Efficiency</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Allowed Time (Minutes)</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>BoL Cost (Direct Average)</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>Additional Costs</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group ">
+                                                            <div class="row ">
+                                                                <div class="col col-sm-11 col-md-11">
+                                                                    <select class="form-control" name="" id="">
+                                                                        <option value="0">--Select Any--</option>
+                                                                        <option value="1">Costing</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col col-sm-1 col-md-1  align-self-end">
+                                                                    <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>BoM Cost (Estimate)</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Prime Cost</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Factory Overhead against Labour</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Overhead Cost</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title" style="border-bottom:0px">
+                                <h2>Total Cost</h2>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-3">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Product Cost</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="SellingPrice" role="tabpanel" aria-labelledby="SellingPrice-Tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <div class="form-group ">
+                                            <div class="row ">
+                                                <div class="col col-sm-11 col-md-11">
+                                                    <select class="form-control" name="" id="">
+                                                        <option value="0">--Select Any--</option>
+                                                        <option value="1">Selling Price</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col col-sm-1 col-md-1  align-self-end">
+                                                    <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>Prime Cost Additions</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Admin Cost Against Prime Cost</td>
+                                                    <td>
+                                                        %
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Selling Cost Against Prime Cost</td>
+                                                    <td>
+                                                        %
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Marketing Cost Against Prime Cost</td>
+                                                    <td>
+                                                        %
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Enhanced Product Cost</td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>Selling</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Crating Cost</td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Forwarding Cost</td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Documentation Cost</td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Product Insurance</td>
+                                                    <td>
+                                                        %
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Profit</td>
+                                                    <td>
+                                                        %
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Selling Price</td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="AdditionalCosting" role="tabpanel" aria-labelledby="AdditionalCosting-Tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <div class="form-group ">
+                                            <div class="row ">
+                                                <div class="col col-sm-11 col-md-11">
+                                                    <select class="form-control" name="" id="">
+                                                        <option value="0">--Select Any--</option>
+                                                        <option value="1">Additional Costing</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col col-sm-1 col-md-1  align-self-end">
+                                                    <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>Local</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Agent Commission</td>
+                                                    <td>
+                                                        %
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Bank Interest</td>
+                                                    <td>
+                                                        %
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Ex Works Price</td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Local Inland Freight/Wharfage</td>
+                                                    <td>
+                                                        %
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FOB Price</td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>International</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Ocean/Air Freight Insurance</td>
+                                                    <td>
+                                                        %
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CPT Price (Carriage Paid To)</td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Shipping Cost to Destination</td>
+                                                    <td>
+                                                        %
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CIP Price (Carriage Insurance Paid)</td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" readonly />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Margins" role="tabpanel" aria-labelledby="Margins-Tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title" style="border-bottom:0px">
+                                <h2>Total Cost</h2>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-3">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group ">
+                                                            <div class="row ">
+                                                                <div class="col col-sm-11 col-md-11">
+                                                                    <select class="form-control" name="" id="">
+                                                                        <option value="0">--Select Any--</option>
+                                                                        <option value="1">Margins</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col col-sm-1 col-md-1  align-self-end">
+                                                                    <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <table class="table">
+                                            <tr>
+                                                <td>Product Cost</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>Currency</td>
+                                                <td>
+                                                    <div class="form-group ">
+                                                        <div class="row ">
+                                                            <div class="col col-sm-11 col-md-11">
+                                                                <select class="form-control" name="" id="">
+                                                                    <option value="0">--Select Any--</option>
+                                                                    <option value="1">1</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col col-sm-1 col-md-1  align-self-end">
+                                                                <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>Exchange Rate</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title" style="border-bottom:0px">
+                                <h2>Margins</h2>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table class="table">
+                                            <tr class="text-center">
+                                                <td></td>
+                                                <td></td>
+                                                <td>Price Point</td>
+                                                <td>Contribution</td>
+                                                <td>Margin %</td>
+                                            </tr>
+                                            <tr>
+                                                <td>FOB Price</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" readonly />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" readonly />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" readonly />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>CPT Price (Carriage Paid To)</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" readonly />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" readonly />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" readonly />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>CPT Price (Carriage Insurance Paid)</td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" readonly />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" readonly />
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="" id="" class="form-control" readonly />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="KPIMatrix" role="tabpanel" aria-labelledby="KPIMatrix-Tab">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-3">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <div class="form-group ">
+                                                    <div class="row ">
+                                                        <div class="col col-sm-11 col-md-11">
+                                                            <select class="form-control" name="" id="">
+                                                                <option value="0">--Select Any--</option>
+                                                                <option value="1">KPI Matrix</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col col-sm-1 col-md-1  align-self-end">
+                                                            <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Production" role="tabpanel" aria-labelledby="Production-Tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>Production Line</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Line</td>
+                                                    <td>
+                                                        <div class="form-group ">
+                                                            <div class="row ">
+                                                                <div class="col col-sm-11 col-md-11">
+                                                                    <select class="form-control" name="" id="">
+                                                                        <option value="0">--Select Any--</option>
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col col-sm-1 col-md-1  align-self-end">
+                                                                    <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Factory</td>
+                                                    <td>
+                                                        <input type="text" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Country</td>
+                                                    <td>
+                                                        <input type="text" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Line Efficiency</td>
+                                                    <td>
+                                                        <input type="text" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>Availability</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group ">
+                                                            <div class="row ">
+                                                                <div class="col col-sm-11 col-md-11">
+                                                                    <select class="form-control" name="" id="">
+                                                                        <option value="0">--Select Any--</option>
+                                                                        <option value="1">Production</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col col-sm-1 col-md-1  align-self-end">
+                                                                    <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Operators</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Interval</td>
+                                                    <td>
+                                                        <div class="form-group ">
+                                                            <div class="row ">
+                                                                <div class="col col-sm-11 col-md-11">
+                                                                    <select class="form-control" name="" id="">
+                                                                        <option value="0">--Select Any--</option>
+                                                                        <option value="1">Hour</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col col-sm-1 col-md-1  align-self-end">
+                                                                    <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Minutes</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Absenteeism</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="LineBalance" role="tabpanel" aria-labelledby="LineBalance-Tab">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table">
+                                    <tr>
+                                        <td>S.M.V</td>
+                                        <td>
+                                            <input type="number" name="" id="" class="form-control" />
+                                        </td>
+                                        <td>
+                                            <div class="form-group ">
+                                                <div class="row ">
+                                                    <div class="col col-sm-11 col-md-11">
+                                                        <select class="form-control" name="" id="">
+                                                            <option value="0">--Select Any--</option>
+                                                            <option value="1">Line Balance</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col col-sm-1 col-md-1  align-self-end">
+                                                        <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Code</th>
+                                            <th>Description</th>
+                                            <th>Freq.</th>
+                                            <th>Operator</th>
+                                            <th>Eff%</th>
+                                            <th>Allowed</th>
+                                            <th>Util.</th>
+                                            <th>Ops</th>
+                                            <th>M/C</th>
+                                            <th>Sect</th>
+                                            <th>W/P</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>001</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="Capacity" role="tabpanel" aria-labelledby="Capacity-Tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <div class="form-group ">
+                                            <div class="row ">
+                                                <div class="col col-sm-11 col-md-11">
+                                                    <select class="form-control" name="" id="">
+                                                        <option value="0">--Select Any--</option>
+                                                        <option value="1">Capacity</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col col-sm-1 col-md-1  align-self-end">
+                                                    <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>Production Time Values</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Standard Minutes(SMV)</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Efficiency Factors</td>
+                                                    <td>
+                                                        <div class="form-group ">
+                                                            <div class="row ">
+                                                                <div class="col col-sm-11 col-md-11">
+                                                                    <select class="form-control" name="" id="">
+                                                                        <option value="0">--Select Any--</option>
+                                                                        <option value="1">Standard</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col col-sm-1 col-md-1  align-self-end">
+                                                                    <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Efficiency</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Allowed Time</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>Capacity</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Interval</td>
+                                                    <td>
+                                                        <input type="text" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Attendance</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Capacity at Standard</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Capacity at Efficiency</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>Target Utilisation</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Production Target</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Operators</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Workplaces</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="x_panel">
+                                <div class="x_title" style="border-bottom:0px">
+                                    <h2>Actual Utilisation</h2>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>Days in Production</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Operators</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Utilisation</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Workplaces</td>
+                                                    <td>
+                                                        <input type="number" name="" id="" class="form-control" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="SectionResults" role="tabpanel" aria-labelledby="SectionResults-Tab">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table">
+                                    <tr>
+                                        <td>S.M.V</td>
+                                        <td>
+                                            <input type="number" name="" id="" class="form-control" />
+                                        </td>
+                                        <td>
+                                            <div class="form-group ">
+                                                <div class="row ">
+                                                    <div class="col col-sm-11 col-md-11">
+                                                        <select class="form-control" name="" id="">
+                                                            <option value="0">--Select Any--</option>
+                                                            <option value="1">Section Results</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col col-sm-1 col-md-1  align-self-end">
+                                                        <button type="button" class="btn-success"><span class="fa fa-plus"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Section</th>
+                                            <th>M/C</th>
+                                            <th>M/C Description</th>
+                                            <th>S.M.V.</th>
+                                            <th>Tot.S.M.V</th>
+                                            <th>No.Oprs.</th>
+                                            <th>% Util.</th>
+                                            <th>No.W/P</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>001</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

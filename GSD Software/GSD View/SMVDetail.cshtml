@@ -1,0 +1,219 @@
+﻿@model BusinessLayer.ViewModels.GSD.tbl_SMVCalculationModel
+
+@{
+    ViewBag.Title = "SMVDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Model != null)
+{
+
+    <script src="~/CustomScripts/GSD/SMVCalculationDetail.js"></script>
+    <div class="right_col pb-4" role="main">
+        <div class="x_content">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Operations (GSD) / SMV</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="accordion container" id="accordionExample">
+                        <div class="card container">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-block text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Customer SMV Data
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <form id="SaveCustomerSMVDetail">
+                                        <input type="hidden" id="SMVID" name="SMVID" value="@Model.SMVID" />
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>Final Sweing SMV</label>
+                                                <input type="text" class="form-control" name="C_SewingSMV" id="C_SewingSMV" onkeyup="C_GetValues()" />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Cutting SMV</label>
+                                                <input type="text" class="form-control" name="C_CuttingSMV" id="C_CuttingSMV" readonly />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Inspection SMV</label>
+                                                <input type="text" class="form-control" name="C_InspectionSMV" id="C_InspectionSMV" readonly />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Scan and Pack SMV</label>
+                                                <input type="text" class="form-control" name="C_ScanPackSMV" id="C_ScanPackSMV" readonly />
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label>Final Total SMV</label>
+                                                <input type="text" class="form-control" name="C_TotalSMV" id="C_TotalSMV" readonly />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Any Match Point for Cutting</label>
+                                                <select class="form-control" id="C_MPCategory" name="C_MPCategory" onchange="C_CalculateMatchPoint()">
+                                                    <option value="0">--Select Match Point--</option>
+                                                    <option value="Yes">Yes</option>
+                                                    <option value="No">No</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>No. of Match Points</label>
+                                                <input type="text" class="form-control" name="C_MatchPoints" id="C_MatchPoints" onkeyup="C_CalculateCuttingSMV()" />
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="form-group col-md-12">
+                                            <button type="button" class="btn btn-primary float-right" onclick="SaveCustomerSMVDetial()">Save</button>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                            <br />
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-block text-center collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Internal SMV Data
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <form id="SaveInternalSMVDetail">
+                                            <input type="hidden" id="SMVID" name="SMVID" value="@Model.SMVID" />
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label>Final Sweing SMV</label>
+                                                    <input type="text" class="form-control" name="SewingSMV" id="SewingSMV" onkeyup="GetValues()" />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Cutting SMV</label>
+                                                    <input type="text" class="form-control" name="CuttingSMV" id="CuttingSMV" readonly />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Inspection SMV</label>
+                                                    <input type="text" class="form-control" name="InspectionSMV" id="InspectionSMV" readonly />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Scan and Pack SMV</label>
+                                                    <input type="text" class="form-control" name="ScanPackSMV" id="ScanPackSMV" readonly />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label>Final Total SMV</label>
+                                                    <input type="text" class="form-control" name="TotalSMV" id="TotalSMV" readonly />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Any Match Point for Cutting</label>
+                                                    <select class="form-control" id="MPCategory" name="MPCategory" onchange="CalculateMatchPoint()">
+                                                        <option value="0">--Select Match Point--</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>No. of Match Points</label>
+                                                    <input type="text" class="form-control" name="MatchPoints" id="MatchPoints" onkeyup="CalculateCuttingSMV()" />
+                                                </div>
+                                            </div>
+                                            <hr />
+                                        </form>
+                                        <br />
+                                        <div class="form-group col-md-12">
+                                            <button type="button" class="btn btn-primary float-right" onclick="SaveInternalSMVDetial()">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-block text-center collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Costing SMV Data
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <form id="SaveCostingSMVDetail">
+                                            <input type="hidden" id="SMVID" name="SMVID" value="@Model.SMVID" />
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label>Total SMV With Formula</label>
+                                                    <input type="text" class="form-control" name="ct_TotalSMVFormula" id="ct_TotalSMVFormula" />
+                                                </div>
+                                            </div>
+                                            <div class="form-row mt-2">
+                                                <div class="col-md-3">
+                                                    <label>Thread Consumption</label>
+                                                    <input type="text" class="form-control" name="ct_ThreadConsumption" id="ct_ThreadConsumption" />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Reference Document</label>
+                                                    <input type="text" class="form-control" name="ct_ReferenceDocument" id="ct_ReferenceDocument" />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Release To Costing</label>
+                                                    <input type="text" class="form-control" name="ct_ReleaseToCosting" id="ct_ReleaseToCosting" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label>Final Sewing SMV</label>
+                                                    <input type="text" class="form-control" name="ct_SewingSMV" id="ct_SewingSMV" onkeyup="ctGetValues()" />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Cutting SMV</label>
+                                                    <input type="text" class="form-control" name="ct_CuttingSMV" id="ct_CuttingSMV" readonly />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Inspection SMV</label>
+                                                    <input type="text" class="form-control" name="ct_InspectionSMV" id="ct_InspectionSMV" readonly />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Scan and Pack SMV</label>
+                                                    <input type="text" class="form-control" name="ct_ScanPackSMV" id="ct_ScanPackSMV" readonly />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label>Final Total SMV</label>
+                                                    <input type="text" class="form-control" name="ct_TotalSMV" id="ct_TotalSMV" readonly />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>Any Match Point for Cutting</label>
+                                                    <select class="form-control" id="ct_MPCategory" name="ct_MPCategory" onchange="ctCalculateMatchPoint()">
+                                                        <option value="0">--Select Match Point--</option>
+                                                        <option value="SolidCut">Solid Cut</option>
+                                                        <option value="MatchPoints">Match Points</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label>No. of Match Points</label>
+                                                    <input type="text" class="form-control" name="ct_MatchPoints" id="ct_MatchPoints" onkeyup="ctCalculateCuttingSMV()" />
+                                                </div>
+                                            </div>
+                                            <hr />
+                                        </form>
+                                        <br />
+                                        <div class="form-group col-md-12">
+                                            <button type="button" class="btn btn-primary float-right" onclick="SaveCostingSMVDetial()">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

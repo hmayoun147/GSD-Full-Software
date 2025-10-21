@@ -1,0 +1,260 @@
+﻿
+@{
+    ViewBag.Title = "SMVs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/CustomScripts/GSD/SMVDetail.js"></script>
+<div id="overlay">
+    <div id="text">Overlay Text</div>
+</div>
+<div class="right_col pb-4" role="main">
+    <div class="x_content">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Operations (GSD) / SMV</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <form id="SaveSMVMaster">
+                    <div class="form-row">
+                        <div class="col-md-3">
+                            <label>Company Name <span style="color:red">*</span></label>
+                            <select class="form-control" id="CompanyName" name="CompanyName">
+                                <option value="0">--Select Company--</option>
+                                <option value="VeerSports">Veer Sports</option>
+                                <option value="Forward Gear">Forward Gear</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Customer</label>
+                            <input type="text" name="CustomerID" id="CustomerID" placeholder="Customer Name" style="width:100%" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Area</label>
+                            <select class="form-control" id="Area" name="Area">
+                                <option value="0">--Select Area--</option>
+                                <option value="Development">Development</option>
+                                <option value="Production">Production</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Mention Stage(In case of Development)</label>
+                            <select class="form-control" id="Stage" name="Stage">
+                                <option value="0">--Select Stage--</option>
+                                <option value="Pre-Pre Costing">Pre-Pre Costing</option>
+                                <option value="Pre-CR1_v1">Pre-CR1_v1</option>
+                                <option value="Pre-Costing_v1">Pre-Costing_v1</option>
+                                <option value="CR1_v1">CR1_v1</option>
+                                <option value="CR2_v1">CR2_v1</option>
+                                <option value="Final_v1">Final_v1</option>
+                                <option value="Pre-Costing_v2">Pre-Costing_v2</option>
+                                <option value="CR1_v2">CR1_v2</option>
+                                <option value="CR2_v2">CR2_v2</option>
+                                <option value="Final_v2">Final_v2</option>
+                                <option value="Pre-Costing_v3">Pre-Costing_v3</option>
+                                <option value="CR1_v3">CR1_v3</option>
+                                <option value="CR2_v3">CR2_v3</option>
+                                <option value="Final_v3">Final_v3</option>
+                                <option value="PreBE">PreBE</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row mt-2">
+                        <div class="col-md-3">
+                            <label>Season</label>
+                            <select class="form-control" id="Season" name="Season">
+                                <option value="0">--Select Season--</option>
+                                <option value="SS-15">SS15</option>
+                                <option value="FW-15">FW15</option>
+                                <option value="SS-16">SS16</option>
+                                <option value="FW-16">FW16</option>
+                                <option value="SS-17">SS17</option>
+                                <option value="FW-17">FW17</option>
+                                <option value="SS-18">SS18</option>
+                                <option value="FW-18">FW18</option>
+                                <option value="SS-19">SS19</option>
+                                <option value="FW-19">FW19</option>
+                                <option value="SS-20">SS20</option>
+                                <option value="FW-20">FW20</option>
+                                <option value="SS-21">SS21</option>
+                                <option value="FW-21">FW21</option>
+                                <option value="SS-22">SS22</option>
+                                <option value="FW-22">FW22</option>
+                                <option value="SS-23">SS23</option>
+                                <option value="FW-23">FW23</option>
+                                <option value="SS-24">SS24</option>
+                                <option value="FW-24">FW24</option>
+                                <option value="SS-25">SS25</option>
+                                <option value="FW-25">FW25</option>
+                                <option value="SS-26">SS26</option>
+                                <option value="FW-26">FW26</option>
+                                <option value="SS-27">SS27</option>
+                                <option value="FW-27">FW27</option>
+                                <option value="SS-28">SS28</option>
+                                <option value="FW-28">FW28</option>
+                                <option value="SS-29">SS29</option>
+                                <option value="FW-29">FW29</option>
+                                <option value="SS-30">SS30</option>
+                                <option value="FW-30">FW30</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Search Working Number <span style="color:red">*</span></label>
+                            <div class="input-group">
+                                <input type="text" id="WorkingNo" name="WorkingNo" placeholder="Working No." class="form-control">
+                                <button type="button" class="btn btn-secondary" onclick="RetriveWorkingNo()"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Article No.</label>
+                            <input type="text" class="form-control" name="ArticleNo" id="ArticleNo" placeholder="Article No." />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Product Name</label>
+                            <input type="text" class="form-control" name="ProductName" id="ProductName" placeholder="Product Name" />
+                        </div>
+                    </div>
+                    <div class="form-row mt-2">
+                        <div class="col-md-3">
+                            <label>Category(New Construction or Carry Over)</label>
+                            <select class="form-control" id="Category" name="Category">
+                                <option value="0">--Select Category--</option>
+                                <option value="InRange">In-Range</option>
+                                <option value="CarryOver">Carry Over</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Carry Over Season</label>
+                            <select class="form-control" id="CarryOverSeason" name="CarryOverSeason">
+                                <option value="0">--Select Season--</option>
+                                <option value="SS-15">SS15</option>
+                                <option value="FW-15">FW15</option>
+                                <option value="SS-16">SS16</option>
+                                <option value="FW-16">FW16</option>
+                                <option value="SS-17">SS17</option>
+                                <option value="FW-17">FW17</option>
+                                <option value="SS-18">SS18</option>
+                                <option value="FW-18">FW18</option>
+                                <option value="SS-19">SS19</option>
+                                <option value="FW-19">FW19</option>
+                                <option value="SS-20">SS20</option>
+                                <option value="FW-20">FW20</option>
+                                <option value="SS-21">SS21</option>
+                                <option value="FW-21">FW21</option>
+                                <option value="SS-22">SS22</option>
+                                <option value="FW-22">FW22</option>
+                                <option value="SS-23">SS23</option>
+                                <option value="FW-23">FW23</option>
+                                <option value="SS-24">SS24</option>
+                                <option value="FW-24">FW24</option>
+                                <option value="SS-25">SS25</option>
+                                <option value="FW-25">FW25</option>
+                                <option value="SS-26">SS26</option>
+                                <option value="FW-26">FW26</option>
+                                <option value="SS-27">SS27</option>
+                                <option value="FW-27">FW27</option>
+                                <option value="SS-28">SS28</option>
+                                <option value="FW-28">FW28</option>
+                                <option value="SS-29">SS29</option>
+                                <option value="FW-29">FW29</option>
+                                <option value="SS-30">SS30</option>
+                                <option value="FW-30">FW30</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>No. of Manual Operations</label>
+                            <input type="text" class="form-control" name="ManualOperations" id="ManualOperations" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>No. of Machine Operations</label>
+                            <input type="text" class="form-control" name="MachineOperations" id="MachineOperations" />
+                        </div>
+                    </div>
+                    <div class="form-row mt-2">
+                        <div class="col-md-3">
+                            <label>Operations Of Bags</label>
+                            <input type="text" class="form-control" name="OperationsofBag" id="OperationsofBag" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Complexity Level</label>
+                            <select class="form-control" id="ComplexityLevel" name="ComplexityLevel">
+                                <option value="0">--Select Level--</option>
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Manpower</label>
+                            <input type="text" class="form-control" name="Manpower" id="Manpower" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Hourly Target/Bundling</label>
+                            <input type="text" class="form-control" name="HourlyTarget" id="HourlyTarget" />
+                        </div>
+                    </div>
+                    <div class="form-row mt-2">
+                        <div class="col-md-3">
+                            <label>Instructions For Development</label>
+                            <textarea type="text" class="form-control" name="DevelopmentInstructions" id="DevelopmentInstructions"></textarea>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Instructions For Costing</label>
+                            <textarea type="text" class="form-control" name="CostingInstructions" id="CostingInstructions"></textarea>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Instructions For Production/ME/QCOC/Quality</label>
+                            <textarea type="text" class="form-control" name="ProductionInstructions" id="ProductionInstructions"></textarea>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group col-md-12">
+                        <button type="button" class="btn btn-primary float-right" onclick="SaveSMVDetail()">Save</button>
+                    </div>
+                </form>
+                
+              
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>SMV Detail</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            Search by : <input type="text" id="smvinfosearch" class="form-control" placeholder="Search" onkeyup="onSearch()" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="SMVDetailInfoKendo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+                <!-- /.content-wrapper -->
+<style>
+    .btn-block {
+        background-color: gray;
+        border: none;
+        color: #ffffff;
+        outline: none;
+        padding: 12px 40px 10px;
+        position: relative;
+    } 
+</style>
+
+
